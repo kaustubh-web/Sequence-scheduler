@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Scheduler</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="layout">
+    <section class="panel hero">
+        <div>
+            <p class="eyebrow">Java Project Tool</p>
+            <h1>Sequence Scheduler</h1>
+            <p class="intro">
+                Build a task sequence, connect dependencies, and generate a clean execution schedule from your browser.
+            </p>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <span id="taskCount">0</span>
+                <small>Tasks</small>
+            </div>
+            <div>
+                <span id="durationCount">0</span>
+                <small>Total Days</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid">
+        <section class="panel">
+            <h2>Create Task</h2>
+            <form id="taskForm" class="form">
+                <label>
+                    Task ID
+                    <input id="taskId" type="text" placeholder="T1" required>
+                </label>
+                <label>
+                    Name
+                    <input id="taskName" type="text" placeholder="Requirement Analysis" required>
+                </label>
+                <label>
+                    Duration (days)
+                    <input id="taskDuration" type="number" min="1" value="1" required>
+                </label>
+                <label>
+                    Depends on
+                    <select id="taskDependencies" multiple></select>
+                </label>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Project Input</h2>
+            <label class="date-field">
+                Start date
+                <input id="projectStartDate" type="date">
+            </label>
+            <div id="taskList" class="task-list empty">No tasks added yet.</div>
+            <div class="actions">
+                <button id="loadSampleButton" class="secondary" type="button">Load Sample</button>
+                <button id="generateButton" type="button">Generate Schedule</button>
+            </div>
+            <p id="message" class="message"></p>
+        </section>
+    </section>
+
+    <section class="panel">
+        <h2>Generated Schedule</h2>
+        <div id="results" class="results empty">Your schedule will appear here.</div>
+    </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
