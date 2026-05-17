@@ -39,3 +39,16 @@ java -cp out com.sequencescheduler.Main
 - If `http://localhost:8080` does not open, make sure another app is not already using port `8080`.
 - If the frontend copy step fails, the app can still serve files directly from `src/web` while running from the project folder.
 - Stop the app with `Ctrl+C`.
+
+## Deploy on Render
+
+This project can be deployed to Render as a `Web Service` using `Docker`.
+
+1. Push this repository to GitHub.
+2. In Render, create a new `Web Service`.
+3. Select this GitHub repository.
+4. Choose `Docker` as the runtime.
+5. Leave the build and start commands empty so Render uses the `Dockerfile`.
+6. Deploy the service.
+
+The app reads the `PORT` environment variable automatically, so it works with Render's assigned port.
